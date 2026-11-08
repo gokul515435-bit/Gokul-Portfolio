@@ -24,14 +24,29 @@ export function MediaTile({ id, media, frame, href, title, subtitle, placeholder
   const reduced = usePrefersReducedMotion();
   const saveData = useSaveData();
   const hoverPlays = motionOn && canHover && !reduced && !saveData;
+  // Touch screens have no hover: previews play by themselves while the tile is on screen
+  // (muted, looping). Off when the motion switch is off, with reduced motion, or data saver.
+  const autoPlays = motionOn && !canHover && !reduced && !saveData;
 
   const isVideo = media.type === 'video' && !!(media.preview || media.src);
-  const active = isVideo && activeId === id;
+  const [inView, setInView] = useState(false);
+  const active = isVideo && (activeId === id || (autoPlays && inView));
   const [failed, setFailed] = useState(false);
   const [ready, setReady] = useState(false);
   const timer = useRef<number>();
   const root = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Touch autoplay: play while at least half the tile is visible; unmount (and reset) when it leaves.
+  useEffect(() => {
+    if (!autoPlays || !isVideo || !root.current) {
+      setInView(false);
+      return;
+    }
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { threshold: 0.5 });
+    io.observe(root.current);
+    return () => io.disconnect();
+  }, [autoPlays, isVideo]);
 
   // Stop when scrolled off-screen.
   useEffect(() => {
@@ -137,7 +152,7 @@ export function MediaTile({ id, media, frame, href, title, subtitle, placeholder
           {caption}
         </div>
       )}
-      {isVideo && !failed && (
+      {isVideo && !failed && !autoPlays && (
         <button
           type="button"
           className="tile__play"
