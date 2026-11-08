@@ -1,0 +1,496 @@
+[
+  {
+    "slug": "2020-tax",
+    "name": "2020TAX_Draft_05.mp4",
+    "categories": [
+      "Brand"
+    ],
+    "width": 1080,
+    "height": 1920,
+    "duration": 75.3,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "kissht-todo",
+    "name": "Kissht ToDo Full Cut v8.mp4",
+    "categories": [
+      "Brand"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 166.9,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "lost-poem",
+    "name": "Lost Poem.mp4",
+    "categories": [
+      "Brand"
+    ],
+    "width": 1280,
+    "height": 720,
+    "duration": 121.2,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "oreo",
+    "name": "Oreo.mp4",
+    "categories": [
+      "Brand"
+    ],
+    "width": 1270,
+    "height": 720,
+    "duration": 64.2,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "ai-episode-1",
+    "name": "AI Ep 1_Final_Export.mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 218.5,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "ai-episode-2",
+    "name": "AI Ep 2_Final_Export.mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 249.8,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "ai-episode-3",
+    "name": "AI Ep 3_Final_Export.mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 278.4,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "ai-episode-4",
+    "name": "AI Ep 4_Final_Export.mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 260.7,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "bloom-icas",
+    "name": "Bloom-iCAS_Explainer_(Full_Cut).mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 134.3,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "daa",
+    "name": "DAA_Full_Cut_v4(Updated).mp4",
+    "categories": [
+      "Explainer"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 168.3,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "adidas",
+    "name": "Adidas.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3.3,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "before-after",
+    "name": "Before After.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 2.1,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "behance",
+    "name": "Behance.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3.2,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "check",
+    "name": "Check.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 7.5,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "connect-shapes",
+    "name": "Connect Shapes.mp4",
+    "categories": [
+      "Kinetic Type",
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 9.6,
+    "audio": false,
+    "source": "video",
+    "duplicates": [
+      "Experiments/Connect Shapes.mp4"
+    ]
+  },
+  {
+    "slug": "cred",
+    "name": "CRED.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1920,
+    "height": 1920,
+    "duration": 4.9,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "desire",
+    "name": "Desire.mp4",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 6.4,
+    "audio": false,
+    "source": "video",
+    "duplicates": [
+      "Kinetic Type/Desire.mp4"
+    ]
+  },
+  {
+    "slug": "google-maps",
+    "name": "Google Maps.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1920,
+    "height": 1920,
+    "duration": 3.6,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "jetlee",
+    "name": "Jetlee.mp4",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 10,
+    "audio": false,
+    "source": "video",
+    "duplicates": [
+      "Kinetic Type/Jetlee.mp4"
+    ]
+  },
+  {
+    "slug": "netflix",
+    "name": "NETFLIX 2.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "nothing-impossible",
+    "name": "NOTHING IMPOSSIBLE.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 10,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "numbers",
+    "name": "Numbers.mp4",
+    "categories": [
+      "Kinetic Type",
+      "Experiments"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 6.4,
+    "audio": false,
+    "source": "video",
+    "duplicates": [
+      "Experiments/Numbers.mp4"
+    ]
+  },
+  {
+    "slug": "pepsi",
+    "name": "PEPSI 2.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 4.1,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "studio-02",
+    "name": "Studio 02.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1920,
+    "height": 1920,
+    "duration": 5,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "summer",
+    "name": "SUMMER.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3.4,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "take-tin",
+    "name": "Take Tin.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3.4,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "tudum",
+    "name": "TUDUM.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 6.5,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "type-2",
+    "name": "Type 2.gif",
+    "categories": [
+      "Kinetic Type"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 3.7,
+    "audio": false,
+    "source": "gif",
+    "duplicates": []
+  },
+  {
+    "slug": "zero",
+    "name": "Zero.mp4",
+    "categories": [
+      "Kinetic Type",
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 10,
+    "audio": false,
+    "source": "video",
+    "duplicates": [
+      "Experiments/Zero.mp4"
+    ]
+  },
+  {
+    "slug": "study-01",
+    "name": "#01.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1536,
+    "height": 1920,
+    "duration": 8.3,
+    "audio": false,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "2020-tax-independence",
+    "name": "2020TAX_Independence_V_1.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1080,
+    "height": 1920,
+    "duration": 27,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "lovesick",
+    "name": "LoveSick.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 7.4,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "numbers-2",
+    "name": "Numbers.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 6,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "rock",
+    "name": "Rock.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1080,
+    "height": 1080,
+    "duration": 8.1,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "shapes-play",
+    "name": "Shapes Play.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 10,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "terry-cube-01",
+    "name": "Terry Cube_01.mp4",
+    "categories": [
+      "Experiments"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 37,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  },
+  {
+    "slug": "showreel",
+    "name": "ShowReel 26.mp4",
+    "categories": [
+      "Showreel"
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 67.9,
+    "audio": true,
+    "source": "video",
+    "duplicates": []
+  }
+]

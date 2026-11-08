@@ -1,0 +1,15 @@
+# dependencies & build output
+node_modules
+dist
+*.tsbuildinfo
+
+# full-length films live on Vercel Blob (scripts/upload-films.mjs), not in git
+public/media/*/full.mp4
+
+# secrets & local Vercel state — never commit
+.env
+.env.*
+.vercel
+
+# OS clutter
+.DS_Store

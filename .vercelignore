@@ -1,0 +1,10 @@
+# Full-length films are served from Vercel Blob (see scripts/upload-films.mjs),
+# so they are not uploaded with the site. Hover previews and posters still are.
+public/media/*/full.mp4
+dist
+node_modules
+scripts/media-import.json
+# Secrets (Blob token etc.) never leave this machine
+.env
+.env.*
+.vercel
