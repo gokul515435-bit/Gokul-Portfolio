@@ -30,7 +30,10 @@ function useScrolledClass(threshold = 40, jitter = 6) {
       root.classList.toggle('is-scrolled', collapsed);
       const reel = document.querySelector<HTMLElement>('.reel');
       const header = document.querySelector<HTMLElement>('.header');
-      root.classList.toggle('over-reel', !!reel && y < reel.offsetHeight - (header?.offsetHeight ?? 0));
+      // "Over the reel" only while the reel actually sits behind the header
+      // (on phones the reel starts below the header, so this stays false there).
+      const r = reel?.getBoundingClientRect();
+      root.classList.toggle('over-reel', !!r && r.top <= 1 && r.bottom > (header?.offsetHeight ?? 0));
     };
     const onScroll = () => {
       cancelAnimationFrame(raf);

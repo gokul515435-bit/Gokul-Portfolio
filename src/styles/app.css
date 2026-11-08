@@ -861,3 +861,26 @@ video {
     pointer-events: none;
   }
 }
+
+/* ── Phones: showreel at its original aspect ratio (desktop stays full-screen) ── */
+@media (max-width: 767px) {
+  .reel {
+    height: auto;
+    margin-top: calc(var(--edge) * 2 + 40px); /* starts just below the header row */
+  }
+  .reel__video {
+    height: auto;
+    aspect-ratio: var(--ratio);
+    object-fit: contain;
+  }
+  .reel__bar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+  .reel__btn {
+    height: 32px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+}
