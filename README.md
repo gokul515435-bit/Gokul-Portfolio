@@ -101,13 +101,24 @@ Live at **https://gokul-portfolio-orpin-beta.vercel.app**. Vercel project `gokul
 - **Site** (code, hover clips, posters, about 16 MB) deploys from this folder. `.vercelignore` leaves out every `full.mp4` and the `.env*` secret files.
 - **Films** live on Vercel Blob at `films/<slug>/full.mp4`. The site finds them through the `VITE_FILM_BASE` environment variable, which is set on Vercel. Locally it falls back to `/media`.
 
-To publish changes (run from this folder, with the bundled Node on your PATH):
+### Making changes from now on
+
+The code lives on GitHub at **github.com/gokul515435-bit/Gokul-Portfolio** (`main` branch). That repository is linked to the Vercel project, so **every push to `main` publishes the site automatically**, usually within a minute or two. Every push is also kept in GitHub's history, so any earlier version can be restored.
+
+1. **Edit** files in this folder. Copy and links are in `src/data/site.ts`; projects (titles, subtitles, descriptions, credits) are in `src/data/projects.ts`. Or open Claude in this folder and describe the change.
+2. **Check it locally** (optional): `npm run dev`, then open http://localhost:5173.
+3. **Push to GitHub**, which also publishes:
 
 ```bash
 export PATH="../.tools/node-v22.23.4-darwin-arm64/bin:$PATH"
-npm run upload-films   # only if you added or changed films; skips ones already uploaded
-npm run deploy         # = vercel --prod
+npm run push -- "Describe what changed"
 ```
+
+`npm run push` uploads this folder straight to GitHub through the signed-in GitHub CLI in `../.tools/gh`, without needing git or Xcode tools. It only uploads files that changed, and it mirrors the folder exactly, so files deleted here are removed on GitHub too. Edits made directly on github.com get overwritten by the next push, so make changes here. To preview what would be sent, run `npm run push -- --dry-run`.
+
+**Adding a new film:** convert it with `npm run import-media` (see *Adding new videos*), upload the full-length version with `npm run upload-films`, add its `project(...)` line, then `npm run push`. Full films never go to GitHub; they live on Blob.
+
+`npm run deploy` (= `vercel --prod`) still works as a manual publish that skips GitHub, but pushing is the normal route.
 
 The free plan includes 1 GB of Blob storage and 10 GB of film streaming per month. Usage is under Vercel → Storage → gokul-films.
 
