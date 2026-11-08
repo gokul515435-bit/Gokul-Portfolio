@@ -38,7 +38,7 @@ export function WorkPage() {
   return (
     <>
     <ShowreelHero />
-    <div className={`page page--work${showreel ? ' has-reel' : ''}`}>
+    <div className={`page page--work${showreel ? ' after-reel' : ''}`}>
       <aside className="side" aria-label="Filters">
         <CategoryFilter value={category} onChange={setCategory} />
       </aside>

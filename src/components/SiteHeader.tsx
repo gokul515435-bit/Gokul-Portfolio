@@ -8,24 +8,44 @@ const NAV = [
   { to: '/contact', label: 'Contact' },
 ];
 
-/** Adds `is-scrolled` to <html> once the page leaves the top, so CSS can collapse the header. */
-function useScrolledClass(threshold = 40) {
+/**
+ * Header state classes on <html>, driven by scroll direction:
+ *  - `is-scrolled`: menu collapsed (scrolling down, away from the top) — the pills slide up
+ *    and the switch shrinks. Scrolling up — anywhere on the page — brings the menu back.
+ *  - `over-reel`: the header is still sitting over the dark showreel (white treatment).
+ */
+function useScrolledClass(threshold = 40, jitter = 6) {
   useEffect(() => {
     const root = document.documentElement;
     let raf = 0;
-    const update = () => root.classList.toggle('is-scrolled', window.scrollY > threshold);
+    let lastY = window.scrollY;
+    let collapsed = false;
+    const update = () => {
+      const y = Math.max(0, window.scrollY);
+      const dy = y - lastY;
+      if (y <= threshold) collapsed = false;
+      else if (dy > jitter) collapsed = true;
+      else if (dy < -jitter) collapsed = false;
+      if (Math.abs(dy) > jitter || y <= threshold) lastY = y;
+      root.classList.toggle('is-scrolled', collapsed);
+      const reel = document.querySelector<HTMLElement>('.reel');
+      const header = document.querySelector<HTMLElement>('.header');
+      root.classList.toggle('over-reel', !!reel && y < reel.offsetHeight - (header?.offsetHeight ?? 0));
+    };
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(update);
     };
     update();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('scroll', onScroll);
-      root.classList.remove('is-scrolled');
+      window.removeEventListener('resize', onScroll);
+      root.classList.remove('is-scrolled', 'over-reel');
     };
-  }, [threshold]);
+  }, [threshold, jitter]);
 }
 
 export function SiteHeader({ compact = false }: { compact?: boolean }) {

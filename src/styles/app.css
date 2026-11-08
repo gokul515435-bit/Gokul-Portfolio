@@ -804,27 +804,60 @@ video {
   letter-spacing: -0.02em;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
-.page--work.has-reel {
+.page--work.after-reel {
   padding-top: calc(var(--edge) * 2);
 }
 @media (max-width: 767px) {
   .reel__label {
     display: none;
   }
-  .page--work.has-reel {
+  .page--work.after-reel {
     padding-top: var(--edge);
   }
 }
 /* Over the showreel (before scrolling) the black header elements would vanish
    into dark footage, so they invert to white. */
-.has-reel:not(.is-scrolled) .pill.is-active {
+.over-reel .pill.is-active {
   background: var(--paper);
   color: var(--ink);
 }
-.has-reel:not(.is-scrolled) .switch[aria-checked='true'] {
+.over-reel .switch[aria-checked='true'] {
   background: var(--paper);
 }
-.has-reel:not(.is-scrolled) .switch[aria-checked='true'] .switch__knob {
+.over-reel .switch[aria-checked='true'] .switch__knob {
   border-color: var(--ink);
   background: var(--ink);
+}
+
+/* ── Phones: category tags stay pinned at the top while scrolling ─────── */
+@media (max-width: 767px) {
+  .page--work > .side {
+    position: sticky;
+    top: calc(var(--edge) * 2 + 40px); /* just below the header row */
+    z-index: 30;
+    margin: 0 calc(-1 * var(--edge)) 12px;
+    padding: 8px 0;
+    background: var(--paper);
+    transition: top 0.4s var(--ease);
+  }
+  /* solid header row on phones so content never shows through above the pinned tags
+     (stays transparent while it floats over the showreel) */
+  .header {
+    background: var(--paper);
+    transition: background-color 0.3s var(--ease);
+  }
+  .over-reel .header {
+    background: transparent;
+  }
+  /* soft edge so tiles disappear cleanly under the pinned row */
+  .page--work > .side::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 12px;
+    background: linear-gradient(var(--paper), transparent);
+    pointer-events: none;
+  }
 }
