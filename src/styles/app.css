@@ -884,3 +884,91 @@ video {
     border-radius: 8px;
   }
 }
+
+/* ── Phones: Work / About / Contact collapse into one hamburger menu ──── */
+.burger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .burger {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    border-radius: 8px;
+    background: var(--grey);
+    transition: background-color 0.2s var(--ease);
+  }
+  .burger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform 0.25s var(--ease), opacity 0.15s var(--ease), background-color 0.2s var(--ease);
+  }
+  .burger[aria-expanded='true'] {
+    background: var(--ink);
+  }
+  .burger[aria-expanded='true'] span {
+    background: var(--paper);
+  }
+  .burger[aria-expanded='true'] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .burger[aria-expanded='true'] span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger[aria-expanded='true'] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* The links become a panel that drops down under the header row */
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex: none;
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+    padding: 0 var(--edge) var(--edge);
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s var(--ease), transform 0.25s var(--ease), visibility 0s linear 0.25s;
+  }
+  .is-menu-open .header__nav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    transition: opacity 0.2s var(--ease), transform 0.25s var(--ease), visibility 0s;
+  }
+  /* The slide-away animation is for the desktop pills only */
+  .header__nav .pill,
+  .is-scrolled .header__nav .pill {
+    flex: none;
+    height: 64px;
+    border-radius: 12px;
+    transform: none;
+    pointer-events: auto;
+    transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .header__nav .pill span {
+    font-size: 28px;
+  }
+}
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 45; /* above the page and pinned tags, below the header */
+}

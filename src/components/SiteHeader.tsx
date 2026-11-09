@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState, type CSSProperties } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { MotionToggle } from './MotionToggle';
 
 const NAV = [
@@ -58,24 +58,60 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
 
 function FullHeader() {
   useScrolledClass();
+  // Phones only: the three links collapse into one hamburger menu (hidden by CSS on larger screens).
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => setOpen(false), [location.pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const startY = window.scrollY;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    const onScroll = () => Math.abs(window.scrollY - startY) > 24 && setOpen(false);
+    document.addEventListener('keydown', onKey);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [open]);
+
   return (
-    <header className="header">
+    <>
+    {/* Invisible layer: a tap outside the open menu only closes it, and never opens what is underneath. */}
+    {open && <div className="menu-backdrop" aria-hidden="true" onClick={() => setOpen(false)} />}
+    <header className={`header${open ? ' is-menu-open' : ''}`}>
       <div className="header__side">
         <MotionToggle />
       </div>
-      <nav className="header__nav" aria-label="Primary">
+      <button
+        type="button"
+        className="burger"
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        aria-controls="site-nav"
+        onClick={() => setOpen(!open)}
+      >
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+      </button>
+      <nav id="site-nav" className="header__nav" aria-label="Primary">
         {NAV.map((n, i) => (
           <NavLink
             key={n.to}
             to={n.to}
             end
-            style={{ '--i': i } as React.CSSProperties}
+            style={{ '--i': i } as CSSProperties}
             className={({ isActive }) => `pill${isActive ? ' is-active' : ''}`}
+            onClick={() => setOpen(false)}
           >
             <span>{n.label}</span>
           </NavLink>
         ))}
       </nav>
     </header>
+    </>
   );
 }
